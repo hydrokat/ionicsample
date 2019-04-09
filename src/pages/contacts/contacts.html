@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ContactsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contacts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <ion-list *ngIf="contacts">
+    <ion-item-sliding *ngFor="let contact of contacts">
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="delete(contact.id)">Delete</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item>
+        <ion-label>{{ contact.name }}</ion-label>
+      </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option (click)="edit(contact.id)">Edit</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+  <ion-list *ngIf="contacts">
+    <ion-item-sliding *ngFor="let contact of contacts">
+      <ion-item>
+        {{contact.name}}
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="danger" (click)="delete(contact.id)">Delete</button>
+      </ion-item-options>
+  
+      <ion-item-options side="right">
+        <button ion-button (click)="edit(contact.id)">Edit</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button (click)="add()">Add contact</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

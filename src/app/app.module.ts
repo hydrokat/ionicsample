@@ -8,6 +8,13 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicStorageModule } from '@ionic/storage';
+
+import { ContactProvider } from '../providers/contact/contact';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { ContactsPageModule } from '../pages/contacts/contacts.module';
+import { ContactAddComponent } from '../components/contact-add/contact-add';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -17,18 +24,28 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'websql', 'localstorage', 'sqlite']
+    }),
     IonicModule.forRoot(MyApp),
+    ContactsPageModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    ContactsPage,
+    ContactAddComponent
   ],
+  schemas: [],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ContactProvider
   ]
 })
 export class AppModule {}
