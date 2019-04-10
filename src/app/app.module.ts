@@ -15,6 +15,7 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { ContactsPageModule } from '../pages/contacts/contacts.module';
 import { ContactAddComponent } from '../components/contact-add/contact-add';
 import { ComponentsModule } from '../components/components.module';
+import { ContactEditComponent } from '../components/contact-edit/contact-edit';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ComponentsModule } from '../components/components.module';
     HomePage,
     ListPage,
     ContactsPage,
-    ContactAddComponent
+    ContactAddComponent,
+    ContactEditComponent
   ],
   schemas: [],
   providers: [

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import { ContactProvider } from '../../providers/contact/contact';
-import { UUID } from 'angular2-uuid';
 import { ContactAddComponent } from '../../components/contact-add/contact-add';
+import { ContactEditComponent } from '../../components/contact-edit/contact-edit';
 
 /**
  * Generated class for the ContactsPage page.
@@ -29,33 +29,27 @@ export class ContactsPage {
     ) {
     //sample contacts
     let sampleContacts = [
-      {
-        id: UUID.UUID(),
+      {        
         name: "John Doe",
         number: "09153125489"
       },
-      {
-        id: UUID.UUID(),
+      {        
         name: "Jane Doe",
         number: "09153178489"
       },
-      {
-        id: UUID.UUID(),
+      {        
         name: "Johnie Doe",
         number: "09173995489"
       },
-      {
-        id: UUID.UUID(),
+      {        
         name: "Dayne Denver",
         number: "09153178449"
       },
-      {
-        id: UUID.UUID(),
+      {        
         name: "Michael Jackson",
         number: "09157841256"
       },
-      {
-        id: UUID.UUID(),
+      {        
         name: "Michael Doe",
         number: "09157784689"
       }
@@ -85,14 +79,25 @@ export class ContactsPage {
     contactModal.present();
 
     contactModal.onDidDismiss(data => {
-      console.log(data);
+      console.log("New contact", data);
+      this.contactService.load().then(() => {
+        this.load();
+      });
     })
   }
 
-  edit(id) {
-    // this.contactService.edit(id);
-    console.log("Edit", id);
-    
+  edit(contact) {
+    let contactModal = this.modalCtrl.create(ContactEditComponent, {
+      contact: contact
+    });
+    contactModal.present();
+
+    contactModal.onDidDismiss(data => {
+      console.log("Edited contact", data);
+      this.contactService.load().then(() => {
+        this.load();
+      });
+    })    
   }
 
   delete(id) {

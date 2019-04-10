@@ -1,4 +1,34 @@
-<!-- Generated template for the ContactEditComponent component -->
-<div>
-  {{text}}
-</div>
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Close</button>
+    </ion-buttons>
+    <ion-title>Edit Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" floating>Name</ion-label>
+    <ion-input name="name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Address</ion-label>
+    <ion-input name="address" [(ngModel)]="address"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Number</ion-label>
+    <ion-input name="number" [(ngModel)]="number"></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button small (click)="dismiss()">Close Modal</button>
+      <button ion-button (click)="save(); dismiss();">Save</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
