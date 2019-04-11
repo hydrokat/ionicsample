@@ -16,6 +16,7 @@ import { ContactsPageModule } from '../pages/contacts/contacts.module';
 import { ContactAddComponent } from '../components/contact-add/contact-add';
 import { ComponentsModule } from '../components/components.module';
 import { ContactEditComponent } from '../components/contact-edit/contact-edit';
+import { AboutPageModule } from '../pages/about/about.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ContactEditComponent } from '../components/contact-edit/contact-edit';
     }),
     IonicModule.forRoot(MyApp),
     ContactsPageModule,
+    AboutPageModule,
     ComponentsModule
   ],
   bootstrap: [IonicApp],

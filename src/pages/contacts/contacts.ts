@@ -4,13 +4,6 @@ import { ContactProvider } from '../../providers/contact/contact';
 import { ContactAddComponent } from '../../components/contact-add/contact-add';
 import { ContactEditComponent } from '../../components/contact-edit/contact-edit';
 
-/**
- * Generated class for the ContactsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-contacts',
@@ -26,7 +19,7 @@ export class ContactsPage {
     public contactService: ContactProvider,
     public alertCtrl: AlertController,
     public modalCtrl: ModalController
-    ) {
+  ) {
     //sample contacts
     let sampleContacts = [
       {        

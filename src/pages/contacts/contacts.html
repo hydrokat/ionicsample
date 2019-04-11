@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ContactsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -14,21 +8,6 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-list *ngIf="contacts">
-    <ion-item-sliding *ngFor="let contact of contacts">
-      <ion-item-options side="start">
-        <ion-item-option color="danger" (click)="delete(contact.id)">Delete</ion-item-option>
-      </ion-item-options>
-  
-      <ion-item>
-        <ion-label>{{ contact.name }}</ion-label>
-      </ion-item>
-  
-      <ion-item-options side="end">
-        <ion-item-option (click)="edit(contact.id)">Edit</ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list> -->
   <ion-list *ngIf="contacts">
     <ion-item-sliding *ngFor="let contact of contacts">
       <ion-item>
